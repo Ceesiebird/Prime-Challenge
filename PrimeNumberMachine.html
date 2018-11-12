@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="PrimeNumberMachine.css" type="text/css">
+<html>
+        <title>Prime-O-Tron</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function findPrime(){
+			
+                //Here we get the input value from the HTML field.
+                var num = document.getElementById('num').value;
+				
+				//We set the initial value of c to 0 for use in the for loop below.
+                var c = 0;
+ 
+                //We loop until i is equal to $num
+                for (i = 1; i <= num; i++) {
+				
+                    /*In order to check if the $num is divisible by itself and 1
+					  here we use the modulo operator (%) to return the remainder value after division of $num by i.
+					  so if the remainder is 0 then it is divisible.*/
+                    if (num % i == 0) {
+					
+                        //We increment the value of c each time the remainder of the division equals 0. 
+                        c = c + 1;
+                    }
+                }
+ 
+                /*If the value of c is 2 then it is a prime number
+				  because a prime number should be exactly divisible in two cases only (by itself and by the number 1)*/
+				if (c == 2) {
+					msg = num + ' is a Prime number';
+					imageshown = "OptimusPrime.gif"
+				} else {
+					msg = num + ' is NOT a Prime number';
+					imageshown = "Megatron.gif"
+				}
+
+				var result = document.getElementById('result');
+				var img = result.nextElementSibling;
+
+				result.textContent = msg;
+				img.src = imageshown;
+			} // <--function closing
+     
+        </script>
+    <div class="container">
+       <form  id="contact" method="post">
+	   
+			<h3>Prime-O-Tron</h3>
+			<h4>Please fill in a number in the field below and press "Calculate" to see if it is a prime number or not.</h4>
+			
+			Please enter a number:
+			<input type="number" id="num" name="num" min="0" />
+			<input type="button" value="Calculate" onclick="findPrime()" name="find" />
+            <div style="margin-top: 10px;" id="result"></div>
+			<img src= "defaultLogo.png">
+			
+	
+        </form>
+		
+    </div>
+</html>

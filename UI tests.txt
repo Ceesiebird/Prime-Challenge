@@ -1,0 +1,41 @@
+Prime-O-Tron UI tests:
+
+TestCase 1:
+
+GIVEN I am on the Prime-O-Tron home page.
+WHEN I don't carry out any actions.
+THEN A black and white transformer logo is shown.
+
+TestCase 2:
+
+GIVEN I am on the Prime-O-Tron home page.
+WHEN I fill in the number 7 in the number field.
+AND I press the button "Calculate"
+THEN The interface shows the text "7 is a Prime number"
+AND The black and white transformer logo has changed into an animated GIF of Optimus Prime.
+
+TestCase 3:
+
+GIVEN I am on the Prime-O-Tron home page.
+WHEN I fill in the number 8 in the number field.
+AND I press the button "Calculate"
+THEN The interface shows the text "8 is NOT a Prime number"
+AND The black and white transformer logo has changed into an animated GIF of Megatron.
+
+TestCase 4:
+
+GIVEN I am on the Prime-O-Tron home page.
+WHEN I fill in any number in the number field.
+AND I press the x displayed at the right side of the text field.
+THEN The text field is made blank.
+AND The interface shows neither prime number response.
+AND The black and white transformer logo has not changed.
+
+TestCase 5:
+
+GIVEN I am on the Prime-O-Tron home page.
+WHEN I fill in any non numeric value in the number field.
+AND I press the button "Calculate"
+THEN The interface shows the text "is NOT a Prime number"
+AND The black and white transformer logo has changed into an animated GIF of Megatron.
+ 
